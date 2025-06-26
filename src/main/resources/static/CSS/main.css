@@ -1,0 +1,125 @@
+
+.cust-header{
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #343a40;
+}
+
+.form-label {
+    color: #495057;
+}
+
+.btn-primary {
+    background-color: #809af6;
+    border: none;
+}
+
+.btn-primary:hover {
+    border: none;
+}
+
+.btn-danger {
+    background-color: #d02c20;
+    border: none;
+}
+
+.btn-danger:hover {
+    border: none;
+}
+
+a{
+    color: #698eb9;
+}
+a:hover{
+    color: #346bab;
+}
+
+
+.myAlert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 900px; /* maximum width */
+    height: auto;
+    max-height: 900px; /* maximum height */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9997;
+    border-radius: 20px;
+    overflow-y: scroll;
+}
+
+.myAlert-sm {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 500px; /* maximum width for small screens */
+    height: auto;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Reduce the shadow for small screens */
+    z-index: 9997;
+    border-radius: 15px; /* Slightly reduce the border radius */
+    padding: 20px;
+}
+
+.myAlertBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* Add media queries for responsiveness on various devices */
+/* Tablets and small screens */
+@media (max-width: 768px) {
+    .myAlert {
+        max-width: 400px; /* Set a maximum width on smaller screens */
+    }
+}
+/* Smartphones */
+@media (max-width: 413px) {
+    .myAlert {
+        max-width: none; /* Remove the maximum width for smartphones */
+    }
+}
+
+
+.overlay, .overlay-ov {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9996;
+    display: none;
+}
+
+.overlay-ov {
+    z-index: 9998;
+}
+
+.custom-list-style {
+    list-style-type: none;
+    padding-left: 0;
+}

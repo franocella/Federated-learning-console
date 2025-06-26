@@ -1,0 +1,28 @@
+.experiment{
+    margin: 80px;
+}
+.container{
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+#myChart{
+    width: 100%;
+}
+.container{
+    padding: 10px;
+}
+
+.col{
+    background-color: white;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.title{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.col-infos{
+    display: flex;
+}
+

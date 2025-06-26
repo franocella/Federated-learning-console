@@ -1,0 +1,184 @@
+\chapter{Analysis}
+
+\section{Requirements}
+
+\subsection{Functional Requirements}
+
+\subsubsection{For Administrators:}
+
+\begin{itemize}
+    \item Administrators must be able to log in to the application.
+    \item Administrators must be able to log out of the application securely.
+    \item Administrators must be able to create new configurations for experiments.
+    \item Administrators must be able to create experiments based on the configurations they have defined.
+    \item Administrators must be able to initiate experiments and oversee their execution.
+    \item Administrators must be able to view other administrators' experiments.
+    \item Administrators must possess the authority to perform CRUD operations on configurations and experiments.
+    \item Administrators must be able to modify his/her own account information and delete account.
+\end{itemize}
+
+\subsubsection{For Users:}
+
+\begin{itemize}
+    \item Users must be able to log in to the application.
+    \item Users must be able to log out of the application securely.
+    \item Users must be able to register for a new account within the application.
+    \item Users must be able to search for experiments based on configuration and experiment names.
+    \item Users must be able to monitor real-time progress of experiments.
+    \item Users must be able to modify his/her own account information and delete account.
+\end{itemize}
+
+\newpage
+\subsection{Non-Functional Requirements}
+
+\begin{enumerate}
+    \item \textbf{Performance:} The system must handle a large number of concurrent users without significant performance degradation. Response times for critical operations should be kept within acceptable limits.
+    \item \textbf{Reliability:} The system should be highly available with minimal downtime. 
+    \item \textbf{Security:} User authentication and authorization mechanisms must be implemented.
+    \item \textbf{Scalability:} The system should scale horizontally to accommodate increasing user loads and data volumes.
+    \item \textbf{Usability:} The user interface must be intuitive and error messages must be informative.
+    \item \textbf{Maintainability:} The codebase must be well-organized and documentation must be comprehensive.
+    \item \textbf{Compatibility:} The application must be compatible with a wide range of web browsers and devices. Integration with external systems must be seamless.
+\end{enumerate}
+
+\section{Use Case Diagram}
+\subsection{Actors}
+
+The actors who can interact with the web console system consist of the following:
+\begin{itemize}
+    \item \textbf{User:} The user is the actor who can access to the system to browse all the experiments and view their progress.
+    \item \textbf{Admin:} The admin is the actor who can manage the system, including creation and deletion of configurations and experiments, running the experiments and view their progress.
+\end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/2_analisys/FL_use_case.png}
+    \caption{Use Case Diagram}
+    \label{fig:use_case_diagram}
+\end{figure}
+
+\newpage
+\subsection{Scenarios}
+In the following tables, several key use cases related to the management and execution of experiments within the application are presented. These use cases cover actions performed by different actors, including users and administrators, and describe the steps involved in each scenario, along with pre-conditions and post-conditions.
+\begin{table}[ht!]
+    \centering
+    \caption{Use Case: Find Experiment}
+    \begin{tabularx}{\textwidth}{|Sl|S{X}|}
+        \hline
+        \textbf{\textit{Use Case}}       & \textbf{Find Experiment}                                           \\ \hline
+        \textbf{Primary Actor}           & User, Admin                                                        \\ \hline
+        \textbf{Secondary Actor}         & --                                                                 \\ \hline
+        \textbf{Description}             & Allows the actor to find a specific experiment                     \\ \hline
+        \textbf{Pre-Conditions}          & Actor must be logged in                                            \\ \hline
+        \textbf{Main event steps}        & 1. The actor navigates to the “Search” feature                     \\
+                                         & 2. The actor enters the Experiment and/or the configuration name   \\
+                                         & 3. The system searches for the list of experiments in database for \\
+                                         & matching results                                                   \\ \hline
+        \textbf{Post-Conditions}         & The actor views a list of experiments matching the                 \\
+                                         & search criteria if there are any                                   \\ \hline
+        \textbf{Correlated Use cases}    &                                                                    \\ \hline
+        \textbf{Alternative event steps} & --                                                                 \\ \hline
+    \end{tabularx}
+\end{table}
+
+\begin{table}[ht!]
+    \centering
+    \caption{Use Case: Create Experiment}
+    \begin{tabularx}{\textwidth}{|Sl|S{X}|}
+        \hline
+        \textbf{\textit{Use Case}}       & \textbf{Create Experiment}                                        \\ \hline
+        \textbf{Primary Actor}           & Admin                                                             \\ \hline
+        \textbf{Secondary Actor}         & --                                                                \\ \hline
+        \textbf{Description}             & Allows the admin to create a specific experiment                  \\ \hline
+        \textbf{Pre-Conditions}          & Actor must be logged in and has the admin privileges              \\ \hline
+        \textbf{Main event steps}        & 1. Admin selects the option to create a new experiment.           \\
+                                         & 2. Admin fills in the name and configurations for the experiment. \\
+                                         & 3. Admin confirms the creation of the experiment.                 \\ \hline
+        \textbf{Post-Conditions}         & The experiment is successfully created.                           \\ \hline
+        \textbf{Correlated Use cases}    & Run Experiment                                                    \\ \hline
+        \textbf{Alternative event steps} & --                                                                \\ \hline
+    \end{tabularx}
+\end{table}
+
+
+
+\begin{table}[ht!]
+    \centering
+    \caption{Use Case: Run Experiment}
+    \begin{tabularx}{\textwidth}{|Sl|S{X}|}
+        \hline
+        \textbf{\textit{Use Case}}       & \textbf{Run Experiment}                                                     \\ \hline
+        \textbf{Primary Actor}           & Admin                                                                       \\ \hline
+        \textbf{Secondary Actor}         & --                                                                          \\ \hline
+        \textbf{Description}             & Allows the admin to start a specific experiment                             \\ \hline
+        \textbf{Pre-Conditions}          & Actor must be logged in and have admin privileges                           \\ \hline
+        \textbf{Main event steps}        & 1. Admin selects the experiment and reaches the details page.               \\
+                                         & 2. If the experiment has not started yet                                         \\
+                                         & \hspace{1em} 2.1 When the start button is clicked \\
+                                         & \hspace{2.5em} 2.2 The system will send a request to start the experiment \\
+                                         & \hspace{2.5em} 2.3 If the experiment is successfully started, the system will \\
+                                         & \hspace{2.5em} display a success message \\ \hline
+        \textbf{Post-Conditions}         & The experiment statistics are shown on the experiment details page          \\
+                                         & and saved in the database.                                                  \\ \hline
+        \textbf{Correlated Use cases}    &                                                                             \\ \hline
+        \textbf{Alternative event steps} & --                                                                          \\ \hline
+    \end{tabularx}
+\end{table}
+
+\begin{table}[ht!]
+    \centering
+    \caption{Use Case: View Experiment Progress}
+    \begin{tabularx}{\textwidth}{|Sl|S{X}|}
+        \hline
+        \textbf{\textit{Use Case}}       & \textbf{View Experiment Progress}                                                     \\ \hline
+        \textbf{Primary Actor}           & User, Admin                                                        \\ \hline
+        \textbf{Secondary Actor}         & --                                                                          \\ \hline
+        \textbf{Description}             & Allows the admin to view a specific experiment progress                            \\ \hline
+        \textbf{Pre-Conditions}          & Actor must be logged in and have admin privileges                           \\ \hline
+        \textbf{Main event steps}        & 1. The actor selects the experiment and reaches the details page.               \\
+                                        & 2. If the experiment is started                                        \\
+                                        & \hspace{1em} 2.1 Retrieve the stored progresses from the database \\
+                                        & \hspace{1em} 2.2 Display the progress on the experiment details page\\
+                                        & 3. If the experiment is running                    \\
+                                        & \hspace{1em} 3.1 Connect to the websocket\\
+                                        & \hspace{1em} 3.2 Subscribe to the experiment progress topic\\
+                                        & \hspace{1em} 3.3 While the experiment is running, display the progress in  \\
+                                        & \hspace{1em} real-time each time a new message is received\\
+                                        & \hspace{1em} 3.4 Unsubscribe from the topic and disconnect from websocket \\ 
+                                        & \hspace{1em} when the experiment is finished\\ \hline
+        \textbf{Post-Conditions}       & The experiment progress is displayed on the experiment details page.          \\ \hline
+        \textbf{Correlated Use cases}    &                                                                             \\ \hline
+        \textbf{Alternative event steps} & --                                                                          \\ \hline
+    \end{tabularx}
+\end{table}
+
+\newpage
+\section{Analysis Class Diagram}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/2_analisys/FL_class_diag.png}
+    \caption{Class Diagram}
+    \label{fig:class_diagram}
+\end{figure}
+
+\newpage
+\section{Sequence Diagrams}
+The following sequence diagrams illustrate the interactions between the actors and the system for the key use
+cases described in the previous section: the request to start an experiment and the request to view the progress
+of an experiment.
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/2_analisys/sequence-diagram-start-exp.png}
+    \caption{Sequence Diagram - Start Experiment}
+    \label{fig:sequence_diagram_start_exp}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/2_analisys/sequence-diagram-view-progress.png}
+    \caption{Sequence Diagram - View Progress}
+    \label{fig:sequence_diagram_view_progress}
+\end{figure}
+
+
