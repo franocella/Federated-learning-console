@@ -8,16 +8,6 @@ The primary goal of this project is to offer a user-friendly graphical interface
 
 This system uses an **FL Director**, an Erlang node, to coordinate the execution of experiments among participating devices. The platform is designed to support the concurrent execution of multiple experiments, provide real-time analytics, and offer flexible storage for experiment statistics.
 
-## 👥 Authors
-
-This is a group project by:
-
-- Feyzan Çolak
-
-- Flavio Messina
-
-- Francesco Nocella
-
 ## ✨ Key Features
 
   * **Web-Based Console**: A graphical interface to initiate, manage, and monitor FL experiments.
@@ -135,3 +125,19 @@ epmd
 ```
 
 Once these services are configured and running, the **FL Web Console** application will be ready for use.
+
+## 👥 Authors
+
+This is a group project by:
+
+- Feyzan Çolak
+
+- Flavio Messina
+
+- Francesco Nocella
+
+## 📜 License
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License**. See the [LICENSE](http://creativecommons.org/licenses/by-nc-sa/4.0/) file for details.
+
+This means the software is provided "as-is" and you are free to use, share, and adapt it for **non-commercial purposes**, as long as you provide appropriate attribution and distribute any derivative works under the same license.
