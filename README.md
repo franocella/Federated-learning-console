@@ -128,13 +128,11 @@ Once these services are configured and running, the **FL Web Console** applicati
 
 ## 👥 Authors
 
-This is a group project by:
+- [**Feyzan Çolak**](https://github.com/feyzancolak)
 
-- Feyzan Çolak
+- [**Flavio Messina**](https://github.com/xDarkFlamesx)
 
-- Flavio Messina
-
-- Francesco Nocella
+- [**Francesco Nocella**](https://github.com/franocella)
 
 ## 📜 License
 
