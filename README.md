@@ -17,7 +17,7 @@ This system uses an **FL Director**, an Erlang node, to coordinate the execution
       * **Admins**: Have full control over the system, including managing configurations, creating and running experiments, and viewing all experiment data.
   * **Real-Time Monitoring**: Utilizes WebSocket communication for real-time data exchange, allowing users to seamlessly track the progress of ongoing experiments.
   * **Concurrent Execution**: Leverages Java threads and `ExecutorService` to efficiently manage and run multiple experiments simultaneously.
-  * **Flexible Data Storage**: Uses MongoDB (or a compatible DocumentDB) for storing experiment statistics, user data, and configurations, taking advantage of its flexibility and horizontal scalability.
+  * **Flexible Data Storage**: Uses MongoDB for storing experiment statistics, user data, and configurations, taking advantage of its flexibility and horizontal scalability.
   * **Centralized Analytics**: Provides a centralized access point for all experiment statistics, simplifying monitoring and analysis.
 
 ## 🏗️ System Architecture
